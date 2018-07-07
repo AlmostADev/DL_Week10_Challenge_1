@@ -1,10 +1,10 @@
 # Transformar la clase Semana en un módulo y obtener la misma salida:
 
-class Semana
-  @@primer_dia = 'Lunes'
+module Semana
+  @primer_dia = 'Lunes'
 
   def self.primer_dia
-    @@primer_dia
+    @primer_dia
   end
 
   def self.en_un_meses
