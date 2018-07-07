@@ -16,6 +16,8 @@ end
 
 # Crear una clase Car que herede de Vehicle
 class Car < Vehicle
+  attr_accessor :countInst
+  @@countInst = 0
   # El constructor de Car, además de heredar las propiedades de Vehicle,
   # debe incluir un contador de instancias de Car.
   def initialize(model, year)
@@ -27,7 +29,7 @@ class Car < Vehicle
   def self.instances
     @@countInst
   end
-
+  # El método engine_start heredado debe además imprimir 'El motor se ha encendido!'.
   def engine_start
     # heredado de Vehicle
     super
@@ -35,7 +37,12 @@ class Car < Vehicle
   end
 end
 
-
-# El método engine_start heredado debe además imprimir 'El motor se ha encendido!'.
 # Instanciar 10 Cars.
+10.times do
+  Car.new("Camaro", 2017)
+end
+
 # Consultar la cantidad de instancias generadas de Car mediante el método de clase creado.
+print Car.instances
+# El método engine_start heredado debe además imprimir 'El motor se ha encendido!'.
+Car.new("Camaro", 2017).engine_start
